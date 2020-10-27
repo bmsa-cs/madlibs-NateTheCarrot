@@ -1,11 +1,3 @@
-"""
-MadLibs
-Author: 
-Period/Core:
-
-
-"""
-
 #If needed, the stories can be found here: https://docs.google.com/document/d/1-rHWl163wXRi4GAgnejGqiduUowRTOv6sXdhaRxtMvo/edit?usp=sharing
 #Only those who need this document have been granted access.
 from colored import fg, attr
@@ -38,13 +30,14 @@ def ask_prompts_1(): #Story 1's prompts
   global verb_2
   global adjective_3
   global place_1
-  proper_noun_1 = input("Please give me a proper noun. ")
-  first_name_1 = input("Please give me a first name. ")
+  global verb_ed_1
+  proper_noun_1 = input("Please give me a proper noun (any capitalized noun). ").capitalize()
+  first_name_1 = input("Please give me a first name. ").capitalize()
   time_unit = input("Please give me a unit of time. ")
-  proper_noun_2 = input("Please give me a proper noun. ")
-  first_name_2 = input("Please give me a first name. ")
+  proper_noun_2 = input("Please give me a proper noun (any capitalized noun). ").capitalize()
+  first_name_2 = input("Please give me a first name. ").capitalize()
   adverb_1 = input("Please give me an adverb. ")
-  last_name_1 = input("Please give me a last name. ")
+  last_name_1 = input("Please give me a last name. ").capitalize()
   noun_1 = input("Please give me a noun. ")
   verb_1 = input("Please give me a verb. ")
   plural_noun_1 = input("Please give me a plural noun. ")
@@ -52,13 +45,14 @@ def ask_prompts_1(): #Story 1's prompts
   movement_verb_1 = input("Please give me a verb describing movement. ")
   noun_2 = input("Please give me a noun. ")
   noun_3 = input("Please give me another noun. ")
-  number_1 = input("Please give me a number (single character). ")
+  number_1 = input("Please give me a number (single character). ") #Be careful, as this does not check if it is a number.
   if(int(number_1) != 1):
     time_unit += "s"
   adverb_2 = input("Please give me an adverb. ")
   adjective_2 = input("Please give me an adjective. ")
   noun_4 = input("Please give me a noun. ")
   verb_2 = input("Please give me a verb. ")
+  verb_ed_1 = input("Please give me a verb in past tense. ")
   adjective_3 = input("Please give me an adjective. ")
   place_1 = input("Please give me a place. ")
 def ask_prompts_2(): #Story 2's prompts
@@ -80,9 +74,15 @@ while True:
 
 if(story_choice_int == 1):
   ask_prompts_1()
+  print(color_start + "\nWe're finished! Here is your story.\n" + reset)
   print(first_name_1 + " and their family, the " + last_name_1 + " family, are going to the " + proper_noun_1 + "'s " + proper_noun_2 + " this summer.\n")
   print(f"\"I can't wait to {verb_1} in the {noun_1}!\" {first_name_2} {adverb_1} said.\n") #I just wanted to try out some string interpolation, I've never used it in Python before and find it incredibly helpful.
-  print("\"Are you sure the " + plural_noun_1 + " won't catch you?\"")
+  print("\"Are you sure the " + plural_noun_1 + " won't catch you?\" " + first_name_1 + " replied.\n")
+  print("The " + last_name_1 + " family " + movement_verb_1 + " to the " + proper_noun_1 + "'s " + proper_noun_2 + ". In " + number_1 + " " + time_unit + ", they arrive at their destination.\n")
+  print("They got there at night, so they needed to head into the hotel. The food there had a fantastic quality, one item being " + noun_2 + " garnished with " + noun_3 + ". Though the kids thought this was " + adjective_2 + ", they had to go to bed soon.")
+  print(first_name_1 + " went to bed " + adverb_2 + ", but " + first_name_2 + " stayed up a bit longer playing with their " + noun_4 + ".")
+  print("The sun rose. It was finally time to " + verb_2 + ". The family got to " + verb_1 + " in the " + noun_1 + ", and " + verb_ed_1 + " for the rest of the day.")
+  print("After the trip was over, everyone headed back to " + place_1 + ", filled to the brim with " + adjective_3 + ".")
 elif(story_choice_int == 2):
   ask_prompts_2()
 else:
