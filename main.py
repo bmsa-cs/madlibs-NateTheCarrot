@@ -7,7 +7,7 @@ color_error = fg(196)
 
 #I also want to try a new naming scheme which I believe helps a lot with readability. It is changing the "one"s and "two"s, etc. in a sentence to 1s and 2s. This at least helps me notice which variables are which quicker.
 
-#Also, I must apologize for the messiness of the code. I will be learning classes in Python in the future.
+#Also, I must apologize for the messiness of the code. I will be learning classes in Python in the future. 
 
 reset = attr('reset') #To initalize the colors
 def ask_prompts_1(): #Story 1's prompts
